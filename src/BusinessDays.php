@@ -14,31 +14,19 @@ class BusinessDays
      */
     public static function getBusinessDays($start_date, $end_date)
     {
-        /** @var \DateTime $startDate */
         $startDate = self::convertDate($start_date);
-        /** @var \DateTime $endDate */
         $endDate = self::convertDate($end_date);
 
         $difference = $startDate->diff($endDate);
-        $number_of_full_weeks = floor($difference->days / 7);
-        $number_of_remaining_days = fmod($difference->days, 7);
+        $full_weeks = floor($difference->days / 7);
+
+        $remaining_days = fmod($difference->days, 7);
         $first_day_of_week = $startDate->format("N");
         $last_day_of_week = $endDate->format("N");
+        $remaining_days = self::getNumberOfRemainingDays($first_day_of_week, $last_day_of_week, $remaining_days);
 
-        // The two can be equal in leap years when february has 29 days, the equal sign is added here
-        if ($first_day_of_week <= $last_day_of_week) {
-            if ($first_day_of_week <= 6 && 6 <= $last_day_of_week) $number_of_remaining_days--;
-            if ($first_day_of_week <= 7 && 7 <= $last_day_of_week) $number_of_remaining_days--;
-        } else {
-            if ($first_day_of_week == 7) {
-                if ($last_day_of_week == 6) $number_of_remaining_days--;
-            } else {
-                $number_of_remaining_days -= 2;
-            }
-        }
-
-        $workingDays = $number_of_full_weeks * 5;
-        if ($number_of_remaining_days > 0) $workingDays += $number_of_remaining_days;
+        $workingDays = $full_weeks * 5;
+        if ($remaining_days > 0) $workingDays += $remaining_days;
         $workingDays = floor($workingDays);
         return (int)$workingDays;
     }
@@ -118,6 +106,27 @@ class BusinessDays
             $targetObj->add(new \DateInterval('P' . $diff . 'D'));
         }
         return $targetObj;
+    }
+
+    /**
+     * @param $first
+     * @param $last
+     * @param $remaining
+     * @return int
+     */
+    private static function getNumberOfRemainingDays($first,$last,$remaining)
+    {
+        if ($first <= $last) {
+            if ($first <= 6 && 6 <= $last) $remaining--;
+            if ($first <= 7 && 7 <= $last) $remaining--;
+        } else {
+            if ($first == 7) {
+                if ($last == 6) $remaining--;
+            } else {
+                $remaining -= 2;
+            }
+        }
+        return $remaining;
     }
 }
 
