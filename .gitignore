@@ -1,0 +1,5 @@
+composer.phar
+tests_bootstrap.php
+vendor
+.idea
+phpunit.phar

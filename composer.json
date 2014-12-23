@@ -1,0 +1,17 @@
+{
+    "name":"troglodyte/BusinessDays",
+    "description":"",
+    "keywords": ["academic", "swag"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "troglodyte",
+            "email": "throwingfish@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "troglodyte\\":"src"
+        }
+    }
+}
