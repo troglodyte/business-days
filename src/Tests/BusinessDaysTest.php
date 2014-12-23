@@ -90,7 +90,7 @@ class BusinessDaysTest extends \PHPUnit_Framework_TestCase
 
     public function testCanGetDiffInDays()
     {
-        $d = $this->dt->getDiffInDays('11/01/2014', '11/3/2014');
+        $d = $this->dt->getRawDiffInDays('11/01/2014', '11/3/2014');
         $this->assertSame(2,$d);
     }
 

@@ -68,7 +68,7 @@ class BusinessDays
      * @return mixed
      * @throws BusinessDaysException
      */
-    public static function getDiffInDays($start, $end)
+    public static function getRawDiffInDays($start, $end)
     {
         $start = self::convertDate($start);
         $end = self::convertDate($end);
@@ -81,7 +81,7 @@ class BusinessDays
      * @return mixed
      * @throws BusinessDaysException
      */
-    public static function getDiffInDaysFromNow($target)
+    public static function getRawDiffInDaysFromNow($target)
     {
         $target = self::convertDate($target);
         $now = new \DateTime('now');
