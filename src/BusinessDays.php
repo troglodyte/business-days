@@ -38,6 +38,7 @@ class BusinessDays
      */
     protected static function convertDate($date)
     {
+        if (is_a($date, 'DateTime')) return $date;
         try {
             $date = new \DateTime($date);
             if ($date === false) throw new \Exception();
