@@ -1,0 +1,16 @@
+troglodyte\Tests\BusinessDays
+ [x] Can create obj
+ [x] Can fail if given crappy date
+ [x] Can get two days difference
+ [x] Can get week and a half working days difference
+ [x] Can remove weekend in between
+ [x] Can remove seven day week
+ [x] Can get 5 bus days from sun to sat period
+ [x] Can get 2 weeksworking days
+ [x] Can calculate all working days in month
+ [x] Can calculate working days distance in non weekend starting month
+ [x] Can calculate working days distance in 2 months
+ [x] Can get diff in days
+ [x] Can get three business days out
+ [x] Can get three business days out over weekend
+

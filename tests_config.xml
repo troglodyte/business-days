@@ -1,0 +1,10 @@
+<phpunit>
+    <php>
+        <server name="SERVER_NAME" value="test"/>
+        <server name="REQUEST_URI" value="tests"/>
+        <ini name="error_log" value="./testerror.log"/>
+    </php>
+    <logging>
+        <log type="testdox-text" target="./testdox.txt"/>
+    </logging>
+</phpunit>
