@@ -1,4 +1,5 @@
-<phpunit>
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit bootstrap="tests_bootstrap.php">
     <php>
         <server name="SERVER_NAME" value="test"/>
         <server name="REQUEST_URI" value="tests"/>
@@ -7,4 +8,9 @@
     <logging>
         <log type="testdox-text" target="./testdox.txt"/>
     </logging>
+    <testsuites name="BusinessDays Test Suite">
+	    <testsuite>
+            <directory>./src/Tests/</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
