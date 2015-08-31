@@ -1,4 +1,4 @@
-BusinessDays
+BusinessDays [![Build Test](https://travis-ci.org/troglodyte/BusinessDays.svg?branch=master)](http://badge.fury.io/rb/sass) [![Code Climate](https://codeclimate.com/github/troglodyte/BusinessDays/badges/gpa.svg)](https://codeclimate.com/github/troglodyte/BusinessDays) [![Test Coverage](https://codeclimate.com/github/troglodyte/BusinessDays/badges/coverage.svg)](https://codeclimate.com/github/troglodyte/BusinessDays/coverage)
 ============
 
 PHP Object that calculates date differences with business days in mind (mon-fri)
