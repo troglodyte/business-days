@@ -1,9 +1,11 @@
 <?php
 namespace troglodyte\Tests;
+use PHPUnit\Framework\TestCase;
 
 use troglodyte\BusinessDays;
+use troglodyte\Exceptions\BusinessDaysException;
 
-class BusinessDaysTest extends \PHPUnit_Framework_TestCase
+class BusinessDaysTest extends TestCase
 {
     /** @var BusinessDays */
     protected $dt;
@@ -21,7 +23,7 @@ class BusinessDaysTest extends \PHPUnit_Framework_TestCase
     public function testCanFailIfGivenCrappyDate()
     {
         $date = 'just another crappy date';
-        $this->setExpectedException('troglodyte\Exceptions\BusinessDaysException', "Could not create date from date supplied: " . $date);
+        $this->expectException(BusinessDaysException::class);
         $this->dt->getBusinessDays($date, '11/12/2014');
     }
 
