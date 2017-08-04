@@ -12,10 +12,13 @@ PHP Object that calculates date differences with business days in mind (mon-fri)
 use troglodyte\BusinessDays
 
 $dt = new BusinessDays();
-$num_days = $dt->getBusinessDays('11/01/2014', '11/3/2014');
+$num_days = $dt->getBusinessDays('01/01/2017', '01/03/2017');
+
+// $num_days = (int) 2
 
 // or
 
-$num_days = BusinessDays::getBusinessDays('11/01/2014', '11/3/2014');
+$num_days = BusinessDays::getBusinessDays('01/01/2017', '01/03/2017');
+// $num_days = (int) 2
 
 ```
