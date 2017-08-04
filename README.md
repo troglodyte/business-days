@@ -3,6 +3,7 @@ BusinessDays [![Build Status](https://travis-ci.org/troglodyte/business-days.svg
 
 PHP Object that calculates date differences with business days in mind (mon-fri)
 
+requires php 7+
 
 #### Example
 
