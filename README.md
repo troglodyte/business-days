@@ -5,6 +5,8 @@ PHP Object that calculates date differences with business days in mind (mon-fri)
 
 requires php 7+
 
+```composer require troglodyte/business-days```
+
 #### Example
 
 
