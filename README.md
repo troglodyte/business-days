@@ -13,13 +13,10 @@ requires php 7+
 use troglodyte\BusinessDays
 
 $dt = new BusinessDays();
-$num_days = $dt->getBusinessDays('01/01/2017', '01/03/2017');
-
-// $num_days = (int) 2
+$num_days = $dt->getBusinessDays('01/01/2017', '01/03/2017'); // returns (int) 2
 
 // or
 
-$num_days = BusinessDays::getBusinessDays('01/01/2017', '01/03/2017');
-// $num_days = (int) 2
+$num_days = BusinessDays::getBusinessDays('01/01/2017', '01/03/2017'); // returns (int) 2
 
 ```
